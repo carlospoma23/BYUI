@@ -12,6 +12,7 @@ print()
 #Strech Challenge
 
 print("STRECH CHALLENGE")
+print()
 
 user_single_value=float(input("Please enter the length value : "))
 print(f'The area of the square is: {user_single_value**2}')
