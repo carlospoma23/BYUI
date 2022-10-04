@@ -1,0 +1,71 @@
+#background {
+    height: 725px;
+    background-color: #438db3;
+}
+
+#hero-msg h1, #hero-msg h4, .button-box, main section{
+text-align: center;
+}
+
+body {
+    background-color: #fcfbfb; 
+}
+.logo{
+    display: block;
+    width: 8%;
+    max-width: 300px;
+  }
+
+#hero-img{
+    width: 100% ;
+    display: block;
+
+}
+header {
+    background-color:#20324C;
+}
+
+ 
+.msg {
+    background-color:#20324C;
+    text-align: center;
+    color:#E4E6E1;
+}
+
+.msg a:hover{
+    text-decoration: underline;
+    background-color: #20324C;
+    color: #f8be37;
+}
+footer {
+    background-color:#20324C;
+    text-align: left;
+    color:#E4E6E1;
+    margin:30px auto;
+}
+
+nav a:hover {
+    background-color: #E4E6E1;
+    color: #438db3;
+}    
+
+.icon {
+    width: 80px;
+}
+     
+nav a, .book, .join, footer a{
+    text-align: center;
+    color: #fcfbfb;
+    text-decoration: none;
+}   
+ 
+footer p {
+    font-size: 1.2em;
+}  
+
+footer p a:hover {
+    text-decoration: underline;
+    background-color: #E4E6E1;
+    color: #438db3;
+
+}   
