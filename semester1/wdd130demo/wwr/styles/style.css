@@ -40,7 +40,7 @@ header {
 footer {
     background-color:#20324C;
     text-align: left;
-    color:#E4E6E1;
+    color:#f8be37;
     margin:30px auto;
 }
 
@@ -49,11 +49,15 @@ nav a:hover {
     color: #438db3;
 }    
 
+footer a{
+    text-decoration: underline;
+    color: #f8be37;
+}
 .icon {
     width: 80px;
 }
      
-nav a, .book, .join, footer a{
+nav a, .book, .join {
     text-align: center;
     color: #fcfbfb;
     text-decoration: none;
