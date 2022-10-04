@@ -1,0 +1,44 @@
+  
+
+    body{
+        background-color: #F2A2C8;
+    }
+    img{
+        width:20%;
+        display:block;
+        margin:20px auto;
+    }
+    /*
+     *{
+        border: 2px solid blue;   
+        }
+    */
+
+    h1,h2,h3,h5{
+        text-align: center;
+        color: white;
+    }
+    
+    footer p{
+        text-align: center;
+        color:black;
+        margin:40px auto;
+        width: 50%;
+        font-size: 18px;
+    }
+    h2 {
+        width: 20%;
+        margin:40px auto;
+       
+    }
+
+    h4 {
+        margin:2px auto;
+        text-align: left;
+        width: 25.0em ;
+    }
+
+    h1:hover{
+        color: black;
+    }
+    
