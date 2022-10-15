@@ -1,3 +1,6 @@
+#content {
+    max-width: 1600px; }
+
 #background {
     height: 725px;
     background-color: #438db3;
@@ -50,7 +53,6 @@ nav a:hover {
 }    
 
 footer a{
-    text-decoration: underline;
     color: #f8be37;
 }
 .icon {
@@ -68,7 +70,6 @@ footer p {
 }  
 
 footer p a:hover {
-    text-decoration: underline;
     background-color: #E4E6E1;
     color: #438db3;
 
