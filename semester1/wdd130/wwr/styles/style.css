@@ -36,7 +36,7 @@ header {
 }
 
 .msg a:hover{
-    text-decoration: underline;
+   text-decoration: underline;
     background-color: #20324C;
     color: #f8be37;
 }
@@ -54,6 +54,7 @@ nav a:hover {
 
 footer a{
     color: #f8be37;
+    text-decoration: none;
 }
 .icon {
     width: 80px;
@@ -67,10 +68,12 @@ nav a, .book, .join {
  
 footer p {
     font-size: 1.2em;
+   
 }  
 
 footer p a:hover {
     background-color: #E4E6E1;
     color: #438db3;
+    text-decoration: none;
 
 }   
