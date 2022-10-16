@@ -1,10 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&display=swap');
+
+:root {
+
+    --primary-color: #20324C   ;
+    --secondary-color: #f8be37 ;
+    --accent1-color: #438db3;
+    --accent2-color: #E4E6E1;
+  
+    /* change the values below to your chosen font(s) */
+    --heading-font: "Aref Ruqaa Ink";
+    --paragraph-font: "libre Baskerville", Helvetica, sans-serif;
+  
+    /* these colors below should be chosen from among your palette colors above */
+    --headline-color-on-white: #20324C;  /* headlines on a white background ok */
+    --headline-color-on-color: #f8be37; /* headlines on a colored background ok */ 
+    --paragraph-color-on-white: #f8be37; /* paragraph text on a white background */ 
+    --paragraph-color-on-color: #f8be37; /* paragraph text on a colored background ok */ 
+    --paragraph-background-color: #20324C  /* relleno del fondo*/;
+    --nav-link-color: white;
+    --nav-background-color: #20324C;
+    --nav-hover-link-color: #438db3;
+    --nav-hover-background-color: #E4E6E1;
+  }
+  /*
 #content {
     max-width: 1600px; }
+*/
 
 #background {
     height: 725px;
     background-color: #438db3;
 }
+
+h1, h2, h3, h4, h5, h6, p{
+    font-family: var(--heading-font);
+    
+}
+.home-title {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10px;
+}
+main section img {
+    box-sizing: border-box;
+}
+nav a{
+    padding: 35px;
+}
+#logo_link  {
+    padding-top: 5px;
+} 
+.icon  {
+    padding-top: 10px;
+} 
+nav a{
+    color: #fcfbfb;
+    text-decoration: none;
+}
+.join a{
+    color:fcfbfb;
+    background-color: #f8be37;
+}
+ .book, .join {
+    text-align: center;
+    font-size: 18px;
+    color :white;
+    text-decoration:double;
+    background-color: #20324C;
+    padding: 15px 30px;
+    margin-top: 50px ;
+    border-radius: 5px;
+}   
+.card-img{
+    border: 10px solid #20324C;
+}
+.rivers-card, .camping-card, .rapids-card {
+    margin: 200px 0;
+}  
+.book:hover {
+    color: #f8be37;
+}  
+
+.msg p {
+    text-align: center;
+    font-size: .8em;
+    line-height: 1.5em;
+    padding-bottom: 15px;
+    
+}   
 
 #hero-msg h1, #hero-msg h4, .button-box, main section{
 text-align: center;
@@ -12,6 +95,11 @@ text-align: center;
 
 body {
     background-color: #fcfbfb; 
+    margin: 0;
+    padding: 0;
+}
+h2{
+    margin:0;
 }
 .logo{
     display: block;
@@ -24,6 +112,12 @@ body {
     display: block;
 
 }
+.mountains {
+padding-top: 35px;
+padding-bottom: 35px;
+margin-top: 100px;
+
+}
 header {
     background-color:#20324C;
 }
@@ -33,6 +127,8 @@ header {
     background-color:#20324C;
     text-align: center;
     color:#E4E6E1;
+    padding: 35px;
+    margin-top: 100px;
 }
 
 .msg a:hover{
@@ -45,6 +141,8 @@ footer {
     text-align: left;
     color:#f8be37;
     margin:30px auto;
+    padding: 25px 50px;
+    margin-top: 150px;
 }
 
 nav a:hover {
@@ -60,11 +158,7 @@ footer a{
     width: 80px;
 }
      
-nav a, .book, .join {
-    text-align: center;
-    color: #fcfbfb;
-    text-decoration: none;
-}   
+
  
 footer p {
     font-size: 1.2em;
@@ -77,3 +171,7 @@ footer p a:hover {
     text-decoration: none;
 
 }   
+
+footer .social img{
+padding-top: 15px;
+}
