@@ -1,0 +1,26 @@
+
+age_rider1=int(input('What is the age of the first rider? '))
+height_rider1=int(input('What is the height of the first rider? '))
+ans=input('Is there a second rider (yes/no) ')
+
+if ans.lower()=='yes':
+    age_rider2=int(input('What is the age of the second rider? '))
+    height_rider2=int(input('What is the height of the second rider? '))
+
+    #conditions
+    if(height_rider2<36):
+        print('Sorry, you may not ride')
+    elif(age_rider2>=18):
+        print('Welcome to the ride, Please be safe and have fun!')
+
+
+else:
+    #conditions
+    if(height_rider1<36):
+        print('Sorry, you may not ride')
+    elif(height_rider1>=62 and age_rider1>=18):
+        print('Welcome to the ride, Please be safe and have fun!')
+    else:
+        print('Sorry, you may not ride')
+    
+
