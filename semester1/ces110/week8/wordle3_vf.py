@@ -39,7 +39,7 @@ while answer==False:
                     display=display+'_'   
                 i=i+1
             if (secret_word.lower()!=display.lower()):
-                print(f'Your hint is: {display.lower()}')
+                print(f'Your hint is: {display}')
         else:
             print('Sorry, the guess must have the same number of letter as the secret word.')
             print()
