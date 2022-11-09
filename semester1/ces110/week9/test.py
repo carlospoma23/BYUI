@@ -27,14 +27,8 @@ def add_items(input_user, lista=[]):
 print(add_items(list_products))  
 """
 
-p1 = Person("John", 36)
-p1.myfunc()
+txt = "hello, my name is Peter, I am 26 years old"
 
-class Person:
-  def __init__(self, name, age):
-    self.name = name
-    self.age = age
+x = txt.split(", ")
 
-  def myfunc(self):
-    print("Hello my name is " + self.name)
-
+print(x)

@@ -1,43 +1,78 @@
-print('Welcome to the Shopping Cart Program')
-done=False
-while(done==False):
-    print('Please select one of the following:')
-    print()
-    print('1. Add item')
-    print('2. View cart')
-    print('3. Remove item')
-    print('4. Compute total')
-    print('5. Exit')
-    user_choice= input('Please enter an action: ')
 
-    match user_choice:
-        case "1":
-            print("Agregando") 
-            add_items(list_products)
-            break
-        case "2":
-            print("Visualizando")
-            break
-        case "3":
-            print("Eliminando")
-            break
-        case "4":
-            print("Calculando")
-            break
-        case "5":
-            print("Goodbye")
-            done=True
-        case _:
-            print("Please enter a choice from the menu (1-4).")
-            print()
+def main():
+    print()
+    print('Welcome to the Shopping Cart Program')
+    done=False 
+    list_products=[]
+    while(done==False):
+        print()
+        print('Please select one of the following:')
+        print()
+        print('1. Add item')
+        print('2. View cart')
+        print('3. Remove item')
+        print('4. Compute total')
+        print('5. Exit')
+        user_choice= input('Please enter an action: ')
+        print()
+        match user_choice:
+            case "1":
+                add_items(list_products)
+                done=False
+            case "2":
+                view_items(list_products)
+                done=False
+            case "3":
+                print("Eliminando")
+                done=False
+            case "4":
+                total_items(list_products)
+                done=False
+            case "5":
+                print("Thank you. Goodbye")
+                done=True
+            case _:
+                print("Please enter a choice from the menu (1-4).")
+                print()
             
-list_products=[]
-def add_items(input_user, lista=[]): 
-    input_user=None   
-    while input_user!='quit':
-        input_user=input('Please enter the items of the shopping list (type: quit to finish): ')
-        if(input_user!="" and input_user!='quit'):
-            lista.append(input_user)
+
+def add_items(lista=[]): 
+    input_item=None   
+    input_price=None
+    while input_item!='quit':
+        input_item=input('What item would you like to add?(type: quit to finish): ')
+        if(input_item!='quit'):
+            input_price=input(f"What is the price of {input_item}? ")
+        if(input_item!="" and input_item!='quit'):
+            lista.append(f'{input_item} - ${input_price}')
+       
     return(lista)
 
-print(add_items(list_products))  
+def view_items(lista=[]):
+    if len(lista)!=0:
+        print('The contents of the shopping cart are:')
+        for item in lista:
+            print(item)
+    else:
+        print('The shopping cart is empty. please select 1. Add item ')    
+    return lista       
+
+def total_items(lista=[]):
+    total=0
+    price=0
+    temp_list=[]
+    if(len(lista)!=0):
+        for item in lista:
+            temp_list=item.split(' - $')
+            price=int(temp_list[1])
+            total+=price
+        print(f'The total price of the items in the shopping cart is ${total}')
+    else:
+        print('The shopping cart is empty. please select 1. Add item ')   
+    return total
+    
+if __name__=='__main__':
+  main()
+
+
+
