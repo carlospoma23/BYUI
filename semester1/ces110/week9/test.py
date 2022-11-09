@@ -26,14 +26,21 @@ def add_items(input_user, lista=[]):
 
 print(add_items(list_products))  
 """
-names = ['carlos', 'pedro', 'juan', 'jose']
-
 
 # ...
 # Code here that populates the two lists
 # ...
 
-for i in range(len(names)):
-    user_input=int(input('Ingrese un numero: '))
-    if user_input==i+1:
-      print(i)
+def valid_int_number():
+  done=False
+  while done==False:
+      num=input('escribe un numero ')
+      try:
+        num=float(num)
+        print('Buen trabajo')        
+        done=True
+      except ValueError:
+        print('Por favor escriba un numero')
+  return num
+
+valid_int_number()
