@@ -26,9 +26,14 @@ def add_items(input_user, lista=[]):
 
 print(add_items(list_products))  
 """
+names = ['carlos', 'pedro', 'juan', 'jose']
 
-txt = "hello, my name is Peter, I am 26 years old"
 
-x = txt.split(", ")
+# ...
+# Code here that populates the two lists
+# ...
 
-print(x)
+for i in range(len(names)):
+    user_input=int(input('Ingrese un numero: '))
+    if user_input==i+1:
+      print(i)

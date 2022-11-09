@@ -23,7 +23,7 @@ def main():
                 view_items(list_products)
                 done=False
             case "3":
-                print("Eliminando")
+                delete_items(list_products)
                 done=False
             case "4":
                 total_items(list_products)
@@ -64,13 +64,25 @@ def total_items(lista=[]):
     if(len(lista)!=0):
         for item in lista:
             temp_list=item.split(' - $')
-            price=int(temp_list[1])
+            price=float(temp_list[1])
             total+=price
         print(f'The total price of the items in the shopping cart is ${total}')
     else:
         print('The shopping cart is empty. please select 1. Add item ')   
-    return total
-    
+    return lista
+
+def delete_items(lista=[]):
+    input_item=None
+    if(len(lista)!=0):
+        input_item=int(input('Which item would you like to remove? '))
+        for item in range(len(lista)):
+            if input_item==item+1:
+                lista.pop(item)
+    else:
+         print('The shopping cart is empty. please select 1. Add item ') 
+    return lista
+
+
 if __name__=='__main__':
   main()
 
