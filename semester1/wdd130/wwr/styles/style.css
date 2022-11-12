@@ -50,6 +50,11 @@ nav{
     display: grid;
     grid-template-columns: repeat(10,1fr);
 }
+.rivers-grid{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+}
+
 #hero-box{
     grid-column:1/4;
     grid-row: 1/3;
