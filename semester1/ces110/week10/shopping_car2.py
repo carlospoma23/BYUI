@@ -43,7 +43,7 @@ def add_items(lista=[]):
         input_item=input('What item would you like to add?(type: quit to finish): ')
         if(input_item!='quit'):
             input_price=input(f"What is the price of {input_item}? ")
-        validation_number(input_price)
+            input_price =validation_number(input_price)
         if(input_item!="" and input_item!='quit'):
             lista.append(f'{input_item} - ${input_price}')
        
@@ -91,9 +91,9 @@ def validation_number(num):
     while done==False:
         try:
           num1=float(num)
-          num.isdigit()
           done=True
         except ValueError:
+            
           print('Please enter a number: ')
 
     return num1
