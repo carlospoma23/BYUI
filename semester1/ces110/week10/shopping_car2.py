@@ -43,7 +43,7 @@ def add_items(lista=[]):
         input_item=input('What item would you like to add?(type: quit to finish): ')
         if(input_item!='quit'):
             input_price=input(f"What is the price of {input_item}? ")
-            input_price =validation_number(input_price)
+            input_price =validation_number_float(input_price)
         if(input_item!="" and input_item!='quit'):
             lista.append(f'{input_item} - ${input_price:.2f}')
         print(f"'{input_item}' has been added to the cart.")
@@ -75,19 +75,21 @@ def total_items(lista=[]):
 
 def delete_items(lista=[]):
     input_item=None
-    view_items(lista)
+    
     if(len(lista)!=0):
-        input_item=int(input('Which item would you like to remove? '))
+        view_items(lista)
+        input_item=input('Which item would you like to remove? ')
+        input_item=validation_number_int(input_item)
         for item in range(len(lista)):
             if input_item==item+1:
                 lista.pop(item)
         print(f'Item {input_item} has been removed.')
     else:
-         print('The shopping cart is empty. please select 1. Add item ') 
+        print('The shopping cart is empty. please select 1. Add item ') 
     return lista
 
 
-def validation_number(num):
+def validation_number_float(num):
     done=False
     num1=None
     while done==False:
@@ -95,11 +97,19 @@ def validation_number(num):
           num1=float(num)
           done=True
         except ValueError:
-            
          num=input('Please enter a number: ')
-
     return num1
 
+def validation_number_int(num):
+    done=False
+    num1=None
+    while done==False:
+        try:
+          num1=int(num)
+          done=True
+        except ValueError:
+         num=input('Please enter a integer number: ')
+    return num1
 
 if __name__=='__main__':
   main()
