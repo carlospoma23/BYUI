@@ -85,7 +85,6 @@ nav{
 .rivers-grid{
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    border: #20324C solid;
 }
 
 .title-rivers{
