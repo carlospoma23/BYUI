@@ -252,7 +252,7 @@ nav a:hover {
 footer {
     background-color:#05103C;
     padding: 25px 50px;
-    margin-top: 100px;
+    margin-top: 200px;
     text-align: left;
     color:#F24484;
     display: flex;
@@ -266,4 +266,39 @@ footer a{
     text-decoration: none;
 }
 
-     
+    
+/* working in the about grid */
+
+.about-grid{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    height: 800px;
+    margin-bottom: 200px;
+}
+.title-students{
+    grid-column: 1/11;
+    grid-row: 1/2;
+    text-align: center;
+    justify-self:center;
+    align-self: center;  
+}
+#background-students{
+    grid-column:  1/11;
+    grid-row: 2/9;
+    background-color: #41aef2;
+    
+}
+
+.int-img{
+    grid-column:  5/11;
+    grid-row: 3/8;
+    width: 100px;
+    height: 100px;
+   
+}
+
+.msg-students{
+    grid-column:  1/4;
+    grid-row: 5/8;
+}
