@@ -1,0 +1,27 @@
+def main():
+    tire_width_list=[135,145,155,165,175,185,195,205,215,225,235,245,255,258,265,275,285,295,305,315,325,335,345,355,365,375]
+    
+    tire_width=None
+
+    tire_width_valid=int(validate('Enter the width of the tire in mm (ex 205): ',tire_width,tire_width_list))
+
+    print(tire_width_valid)
+
+
+def validate(question,number, list):
+    valid=True
+    while (valid==True):
+        number=int(input(f"{question}"))
+        if(number in list):
+            valid=False
+        else:
+            valid=True
+            print('Please enter a correct value, please verify  your enter data in the next list:')
+            print(list)
+    return number
+
+
+
+
+
+main()

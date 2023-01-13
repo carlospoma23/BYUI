@@ -17,7 +17,6 @@ def main():
     print(f'Sales tax amount: {taxes:.2f}')
     print(f'Total {total:.2f}')
 
-    
 def calc_discount(subtotal):
 
     current_day_time=datetime.now()
@@ -25,12 +24,9 @@ def calc_discount(subtotal):
     disc_rate=0.10
 
     if (current_day==1 or current_day==2) and (subtotal>=50):
-        
         discount=subtotal*disc_rate
     else:
         discount=0
-    
     return discount
-
 
 main()
