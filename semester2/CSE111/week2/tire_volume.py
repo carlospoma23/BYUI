@@ -97,8 +97,6 @@ def show_discount():
     print("You have 12% off if your Buy 4 Tires")
 
 
-
-
 def calculating_discount(number, price):
     
     if number==1:
@@ -113,8 +111,6 @@ def calculating_discount(number, price):
     subtotal=float(number)*float(price)
     discount=subtotal*rate
     return discount
-
-
 
 
 def price_tire_calculate(width, ratio, diameter):
