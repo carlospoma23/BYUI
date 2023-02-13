@@ -1,5 +1,4 @@
 import math
-import ast
 
 def main():
 
@@ -46,7 +45,6 @@ def main():
     
     
 def compute_volume(dic):
-
     r=float(dic['Radius'])
     h=float(dic['Height'])
     vol=math.pi*r*r*h
@@ -68,7 +66,6 @@ def compute_storage_efficiency(dic):
 def compute_cost_efficiency(dic):
     v=compute_volume(dic)
     cost_efficiency=v/(float(dic['Cost']))
-
     return cost_efficiency
 
 main()
