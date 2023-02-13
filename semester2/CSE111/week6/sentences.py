@@ -12,16 +12,7 @@ def main():
     print(f'{get_determiner(single).capitalize()} {get_noun(plural)} {get_verb(plural,"present")} {get_prepositional_phrase(plural)}')
     print(f'{get_determiner(single).capitalize()} {get_noun(plural)} {get_verb(plural,"future")} {get_prepositional_phrase(plural)}')
 
-    print("*********")
-
-    print(get_prepositional_phrase(None))
-
-    phrase1=get_prepositional_phrase(single).split(" ")
-    print()
-    print(phrase1)
-
-    print(len(phrase1))
-    print(phrase1[1])
+   
 
 def get_determiner(quantity):
     """Return a randomly chosen determiner. A determiner is
