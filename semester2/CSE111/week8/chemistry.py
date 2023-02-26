@@ -1,25 +1,44 @@
 from formula import parse_formula
 def main():
-    symbol_element=0; name_element=1;atomic_mass_element=2
 
-    periodic_table_data=make_periodic_table()
-    
-    print(f'--Name--  --Atomic Mass--')
-    for list in periodic_table_data:
-        name=list[name_element]
-        atomic=list[atomic_mass_element]
+    # Get a chemical formula for a molecule from the user.
 
-        print(f'{name} {atomic}')
+    chemical_molecula_formula=input("Enter the molecular formula of the sample: ")
+
+    # Get the mass of a chemical sample in grams from the user.
+
+    chemical_mass_grams=float(input('Enter the mass in grams of the sample: '))
+
+    # Call the make_periodic_table function and
+    # store the periodic table in a variable.
+
+    periodic_table=make_periodic_table()
+
+    # Call the parse_formula function to convert the
+    # chemical formula given by the user to a compound
+    # list that stores element symbols and the quantity
+    # of atoms of each element in the molecule.
+
+    symbol_quantity_list_return=parse_formula(chemical_molecula_formula,periodic_table)
+
+    # Call the compute_molar_mass function to compute the
+    # molar mass of the molecule from the compound list.
+
+    molar_mass_result=compute_molar_mass(symbol_quantity_list_return,periodic_table)
+
+   
+    # Compute the number of moles in the sample.
+
+    result_number_moles=chemical_mass_grams/molar_mass_result
+
+    # Print the molar mass.
+    print(f'The molar mass is : {molar_mass_result} grams/mole')
+    # Print the number of moles.
+    print(f'The number of moles is : {result_number_moles:.5f} moles')
 
 
-# Indexes for inner lists in the periodic table
-NAME_INDEX = 0
-ATOMIC_MASS_INDEX = 1
 
-# Indexes for inner lists in a symbol_quantity_list
-SYMBOL_INDEX = 0
-QUANTITY_INDEX = 1
-
+    pass
 
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     """Compute and return the total molar mass of all the
@@ -48,15 +67,32 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
         # Multiply the atomic mass by the quantity.
         # Add the product into the total molar mass.
 
-    # Return the total molar mass.
-    return
+    print
+     # Indexes for inner lists in the periodic table
+    NAME_INDEX = 0
+    ATOMIC_MASS_INDEX = 1
 
+    # Indexes for inner lists in a symbol_quantity_list
+    SYMBOL_INDEX = 0
+    QUANTITY_INDEX = 1
+
+    total_molar_mass=0
+    for tupla in symbol_quantity_list:
+        symbol_value=tupla[SYMBOL_INDEX]
+        quantity_value=tupla[QUANTITY_INDEX]
+        for k,v in periodic_table_dict.items():
+            if symbol_value==k:
+                atomic_value=v[ATOMIC_MASS_INDEX]
+        total_molar_mass+=atomic_value*quantity_value
+
+    # Return the total molar mass.
+    return total_molar_mass
 
 def make_periodic_table():
-
-    periodic_table_list={
+    periodic_table_dict={
+        # symbol: [name, atomic_mass]
         "Ac": ["Actinium",	227],
-        "Ac": ["Silver",	107.8682],
+        "Ag": ["Silver",	107.8682],
         "Al": [	"Aluminum",	26.9815386],
         "Ar": [	"Argon",	39.948],
         "As": [	"Arsenic",	74.9216],
@@ -152,15 +188,44 @@ def make_periodic_table():
     }
 
 
-    return  periodic_table_list
+    return  periodic_table_dict
 
 
+def make_dic_chemical_formulas_name():
+        
+    known_molecules_dict = {
+            "Al2O3": "aluminum oxide",
+            "CH3OH": "methanol",
+            "C2H6O": "ethanol",
+            "C2H5OH": "ethanol",
+            "C3H8O": "isopropyl alcohol",
+            "C3H8": "propane",
+            "C4H10": "butane",
+            "C6H6": "benzene",
+            "C6H14": "hexane",
+            "C8H18": "octane",
+            "CH3(CH2)6CH3": "octane",
+            "C13H18O2": "ibuprofen",
+            "C13H16N2O2": "melatonin",
+            "Fe2O3": "iron oxide",
+            "FeS2": "iron pyrite",
+            "H2O": "water"
+        }
 
+    return known_molecules_dict
 
+def get_formula_name(formula, known_molecules_dict):
+    """Try to find formula in the known_molecules_dict.
+    If formula is in the known_molecules_dict, return
+    the name of the chemical formula; otherwise return
+    "unknown compound".
 
-
-
-
+    Parameters
+        formula is a string that contains a chemical formula
+        known_molecules_dict is a dictionary that contains
+            known chemical formulas and their names
+    Return: the name of a chemical formula
+    """
 
 
 
