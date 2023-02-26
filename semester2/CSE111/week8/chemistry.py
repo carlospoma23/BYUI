@@ -31,15 +31,19 @@ def main():
 
     result_number_moles=chemical_mass_grams/molar_mass_result
 
+    # compute the name of the formule
+    dic_name_formulas=make_dic_chemical_formulas_name()
+    name_chemical_formula=get_formula_name(chemical_molecula_formula,dic_name_formulas)
+    
     # Print the molar mass.
-    print(f'The molar mass is : {molar_mass_result} grams/mole')
+    print()
+    print('******************************************')
+    print(f'The molar mass of the {name_chemical_formula.upper()}  is : {molar_mass_result} grams/mole')
     # Print the number of moles.
     print(f'The number of moles is : {result_number_moles:.5f} moles')
 
 
-
-    pass
-
+    
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     """Compute and return the total molar mass of all the
     elements listed in symbol_quantity_list.
@@ -226,8 +230,12 @@ def get_formula_name(formula, known_molecules_dict):
             known chemical formulas and their names
     Return: the name of a chemical formula
     """
-
-
+    
+    if (formula in known_molecules_dict):
+        name=known_molecules_dict[formula]
+    else:
+        name="unknown compound"
+    return name
 
 if __name__=="__main__":
     main()
