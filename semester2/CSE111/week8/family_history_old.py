@@ -75,6 +75,12 @@ def main():
     # each person's name and age at death.
     print_death_age(people_dict)
 
+    #SAMPLE
+
+   # for person_key, person_list in people_dict.items():
+    #    print(person_list)
+
+
     # Print a blank line.
     print()
 
@@ -100,16 +106,19 @@ def print_death_age(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    print('Ages at Death')
-    for key, value in people_dict.items():
-        
-        value_name=value[0]
-        value_date_birth=value[2]
-        value_date_death=value[3]
-        age=value_date_death - value_date_birth
+    print("Ages at Death")
+    print()
+    for person_key, person_list in people_dict.items():
+        name=person_list[NAME_INDEX]
+        birth_year=person_list[BIRTH_YEAR_INDEX]
+        death_year=person_list[DEATH_YEAR_INDEX]
 
-        print(f'{value_name} {age}')
-        
+        # compute the person's age at death
+        death_age=death_year-birth_year
+
+        #Print the data about the person for the user to see
+        print(name, death_age)
+
 
 def count_genders(people_dict):
     """Count and print the number of males
@@ -121,20 +130,19 @@ def count_genders(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    count_f=0; count_m=0
+    number_males=0
+    for person_key, person_list in people_dict.items():
+        gender=person_list[GENDER_INDEX]
+        if gender=="M":
+            number_males+=1
+    
+    num_people=len(people_dict)
+    num_females=num_people-number_males
 
-    for key, value in people_dict.items():
-
-        
-        value_gender=value[1]
-        if value_gender=='F':
-            count_f+=1
-        else:
-            count_m+=1
-
-    print(f'Gender\n\
-Number of males: {count_m}\n\
-Number of females: {count_f}')
+    print("Genders")
+    print(f"Number of males: {number_males}")
+    print(f"number of females: {num_females}")
+    
 
 
 def print_marriages(marriages_dict, people_dict):
@@ -151,25 +159,39 @@ def print_marriages(marriages_dict, people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    for key, value in marriages_dict.items():
-        value_husband_key = value[0]
-        value_wife_key = value[1]
-        value_marriage = value[2]
+    print("Marriages")
 
-        for key1, value1 in people_dict.items():
-            
-            value_name = value1[0]
-            value_birthday = value1[2]
+    for marriage_key, marriage_list in marriages_dict.items():
 
-            if value_husband_key == key1:
-                value_name_h = value_name
-                value_age_h = value_marriage - value_birthday
+        husband_key=marriage_list[HUSBAND_KEY_INDEX]
+        wife_key=marriage_list[WIFE_KEY_INDEX]
+        wedding_year=marriage_list[WEDDING_YEAR_INDEX]
 
-            elif value_wife_key == key1:
-                value_name_w = value_name
-                value_age_w = value_marriage - value_birthday
 
-        print(f'{value_name_h} {value_age_h} > {value_marriage} < {value_name_w} {value_age_w}' )       
+        husband_list=people_dict[husband_key]
+        husband_name=husband_list[NAME_INDEX]
+        husband_birth=husband_list[BIRTH_YEAR_INDEX]
+
+
+        #calculate the husband's age when he married
+
+        husband_age=wedding_year-husband_birth
+
+        # Use the wife person key to get the wife's data
+        # from the people dictionary and then get the
+        # wife's name and birth year from her data.
+
+        wife_list=people_dict[wife_key]
+        wife_name=wife_list[NAME_INDEX]
+        wife_birth=wife_list[BIRTH_YEAR_INDEX]
+
+        # Calculate the wife's age when she married.
+        wife_age = wedding_year - wife_birth
+
+        # Print the data about the marriage for the user to see.
+        print(f"{husband_name} {husband_age}" \
+            f" > {wedding_year} < {wife_name} {wife_age}")
+
 
 
 # If this file was executed like this:
