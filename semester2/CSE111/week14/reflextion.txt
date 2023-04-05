@@ -1,0 +1,15 @@
+1. Describe an experience you had this semester where you saw the power of
+functions.
+
+I personally learned a lot about how to use functions and how they can help you reuse code. When I used the functions, all my code became easy to read and understand. functions helped me to be able to organize my code, reuse code, and make my code easy to read.
+
+
+2. In your judgment, what is the value of test functions?
+
+This point is important because it helps you reduce testing times, although it is true that it takes a little more time to write the codes, but it is very useful when testing your code.
+Testing functions help us know if our code is working perfectly and if there are any bugs so we can rewrite them quickly.
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+
+I found the option to solve the problems of a program very interesting. The process of solving a program begins with the identification of the problem, then with the review of the code and finally with the solution. During this process it is very important to mention that tools such as Visual Code, among others, have modules that help solve problems in a specific program.
